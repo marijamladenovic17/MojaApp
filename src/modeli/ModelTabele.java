@@ -29,7 +29,7 @@ public class ModelTabele extends AbstractTableModel{
 
     @Override
     public int getColumnCount() {
-        return 4;
+        return 5;
     }
 
     @Override
@@ -41,6 +41,7 @@ public class ModelTabele extends AbstractTableModel{
            case 1: return p.getKlijent();
            case 2: return sdf.format(p.getDatum());
            case 3: return p.getNaziv();
+ 
            default: return null;
        }
     }
@@ -70,6 +71,23 @@ public class ModelTabele extends AbstractTableModel{
 
     public ArrayList<Predmet> dajPredmete() {
        return listaPredmeta;
+    }
+
+    @Override
+    public boolean isCellEditable(int rowIndex, int columnIndex) {
+        if(columnIndex==0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+    
+    
+    @Override
+    public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+        Predmet p = listaPredmeta.get(rowIndex);
+        
+        
     }
     
     

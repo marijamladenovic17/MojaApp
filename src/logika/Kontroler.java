@@ -49,6 +49,10 @@ public class Kontroler {
         return null;
     }
 
+    public ArrayList<Advokat> getListaAdvokata() {
+        return listaAdvokata;
+    }
+
     public ArrayList<Klijent> vratiKlijente() {
         ArrayList<Klijent> listaKlijenta = new ArrayList<>();
        try {
